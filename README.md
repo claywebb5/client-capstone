@@ -90,4 +90,4 @@ We're especially thankful to our client, Fit Truk, for giving us such an awesome
 
 
 ## Support
-If you have suggestions or issues, please email any of us at krale006@umn.edu, alldayabdi@gmail.com, colinrjaworski.84@gmail.com, koffi.k.collins@gmail.com, or clay_webb@outlook.com.
+This is an updated version, the original application created by my team can be viewed [here] (https://github.com/claywebb5/fitTruk-project).
