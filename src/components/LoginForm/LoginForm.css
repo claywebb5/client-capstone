@@ -1,0 +1,30 @@
+.Login-form {
+    background-color: orange;
+    display: flex;
+    align-items: center ;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: 100px 10px 10px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}
+
+.login img{
+    width: 100%;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    row-gap: 5px;
+    padding-top: 10%;
+}
