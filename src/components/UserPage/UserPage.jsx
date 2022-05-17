@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import BackButton from '../BackButton/BackButton';
 //--------------< MUI IMPORTS >-----------------------------
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
@@ -324,7 +325,7 @@ function UserPage() {
                 return <Box sx={{ display: 'flex', flexDirection: 'row', mt: 2 }}>
                   <Grid container justifyContent="center" alignItems="center" direction="row" spacing={7}>
                     <Grid item>
-                      <Button variant="outlined" onClick={handleCancel} color="error">
+                      <Button variant="outlined" onClick={handleCancel} color="error" sx={{bgcolor: '#F5F5F5'}}>
                         Cancel &nbsp;
                         <CancelIcon />
                       </Button>
@@ -349,9 +350,10 @@ function UserPage() {
             })()
           }
         </form>
-        <Button onClick={handleReturnClick} sx={{ border: 2, borderColor: '#80bd02', color: "#000000", bgcolor: '#FFFFFF', mt: 3 }}>
+        <BackButton />
+        {/* <Button onClick={handleReturnClick} sx={{ border: 2, borderColor: '#80bd02', color: "#000000", bgcolor: '#FFFFFF', mt: 3 }}>
           <ArrowBackIosNewIcon /> &nbsp;
-        </Button>
+        </Button> */}
       </Container>
     </>
   );

@@ -50,6 +50,10 @@ function App() {
       secondary: {
           main: '#80bd02',
           contrastText: '#fff'
+      },
+      back: {
+        main: '#41414c',
+        contrastText: '#000000'
       }
     },
   });
