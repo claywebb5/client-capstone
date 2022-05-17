@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import TextField from '@mui/material/TextField';
@@ -94,11 +93,6 @@ function UserPage() {
     });
     setIsEditing(false);
   };
-  //  ============< GO BACK >=============
-  const handleReturnClick = () => {
-    history.goBack();
-    console.log('Clicked Cancel');
-  };
   //  ============< GET INITIALS >=============
   const getInitials = (nameObject) => {
     let firstLetter = 'H';
@@ -126,10 +120,9 @@ function UserPage() {
   // ==========================< RETURN >============================
   return (
     <>
-{/* ---------  The height and fixed position of this page may need to be adjusted at some point ---------- */}
+      {/* ---------  The height and fixed position of this page may need to be adjusted at some point ---------- */}
       <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, height:window.innerHeight, overflow:'scroll', }}>
         <form onSubmit={handleSubmit}>
-
           {/* ============< HEADER >============== */}
           <Card sx={{ bgcolor: '#6d6e71', color: '#FFFFFF' }}>
             <CardContent className={classes.newroot}>
@@ -351,9 +344,6 @@ function UserPage() {
           }
         </form>
         <BackButton />
-        {/* <Button onClick={handleReturnClick} sx={{ border: 2, borderColor: '#80bd02', color: "#000000", bgcolor: '#FFFFFF', mt: 3 }}>
-          <ArrowBackIosNewIcon /> &nbsp;
-        </Button> */}
       </Container>
     </>
   );

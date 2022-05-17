@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import AttendanceItem from '../AttendanceItem/AttendanceItem';
+import BackButton from '../BackButton/BackButton';
 //--------------< MUI IMPORTS >-----------------------------
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
@@ -28,7 +29,7 @@ function AttendeesPage() {
     // =============================< SETUP >========================================
     const dispatch = useDispatch();
     const history = useHistory();
-    const classes = useStyles(); 
+    const classes = useStyles();
 
     //---< FETCH ATTENDANCE >------
     useEffect(() => {
@@ -70,15 +71,10 @@ function AttendeesPage() {
         })
     };
 
-    // ---------< GO BACK >--------------
-    const handleReturnClick = () => {
-        history.goBack();
-    }
-
     return (
         <>
-            <Container sx={{ border: 4, borderColor: '#c3c4c5' }}>
-                <Card sx={{ maxWidth: 345 }}>
+            <Container sx={{ border: 4, borderColor: '#c3c4c5', pb: 2, pt: 1 }}>
+                <Card sx={{ maxWidth: 345, bgcolor: '#6d6e71', color: '#FFFFFF' }}>
                     <CardContent className={classes.newroot}>
                         <Typography variant="h5" align="center" >
                             {classDetails.week_day_name} {classDetails.abbreviated_date}
@@ -107,9 +103,11 @@ function AttendeesPage() {
                     <Button onClick={handleCheckIn} variant="outlined" sx={{ color: "#000000", bgcolor: '#ace23a' }}>Check in</Button>
                 </Box>
 
-                <Button onClick={handleReturnClick} sx={{ bgcolor: '#FFFFFF', border: 2, borderColor: '#80bd02', color: "#000000", mt: 3 }}>
+                {/* <Button onClick={handleReturnClick} sx={{ bgcolor: '#FFFFFF', border: 2, borderColor: '#80bd02', color: "#000000", mt: 3 }}>
                     <ArrowBackIosNewIcon /> &nbsp;
-                </Button>
+                </Button> */}
+                <BackButton />
+
             </Container>
         </>
     );

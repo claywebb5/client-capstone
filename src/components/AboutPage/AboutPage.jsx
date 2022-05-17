@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // ---------< COMPONENT VIEW IMPORTS >----------------
 import About from './About';
 import Packages from './Packages';
+import BackButton from '../BackButton/BackButton';
+
 // ---------< MUI IMPORTS >----------------
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -41,6 +43,7 @@ function AboutPage() {
             </TabPanel>
           </TabContext>
         </Box>
+        <BackButton />
       </Container>
     </>
   );

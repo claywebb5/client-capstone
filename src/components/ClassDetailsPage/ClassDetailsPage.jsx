@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import BackButton from '../BackButton/BackButton';
 //--------------< MUI IMPORTS >-----------------------------
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
@@ -39,7 +40,6 @@ function ClassDetailsPage() {
     const dispatch = useDispatch();
     const classes = useStyles(); // MUI Theme
     const [isEditing, setIsEditing] = useState(false);
-
 
     useEffect(() => {
         dispatch({
@@ -113,7 +113,7 @@ function ClassDetailsPage() {
                 payload: classDetails
             });
         }
-    }
+    };
     // -------------< CANCEL RESERVATION >-------------------
     const handleCancelClick = () => {
         swal({
@@ -137,22 +137,18 @@ function ClassDetailsPage() {
             });
 
     };
-
     // =============< OPEN EDIT >===============
     const handleEdit = () => {
         setIsEditing(true);
     };
-
     // =============< CANCEL EDIT >===============
     const handleCancel = () => {
         setIsEditing(false);
     };
-
     // =============< EDIT DESCRIPTION >===============
     const handleDescriptionChange = (event) => {
         setEditClass({ ...editClass, description: event.target.value });
     };
-
     // ============< SUBMIT >==============================================
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -167,7 +163,7 @@ function ClassDetailsPage() {
 
     return (
         <>
-            <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1 }}>
+            <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, pb: 2, pt: 1 }}>
                 <form onSubmit={handleSubmit}>
                     {/* ============< WEEKDAY AND DATE >============== */}
                     <Card sx={{ bgcolor: '#6d6e71', color: '#FFFFFF' }}>
@@ -354,7 +350,7 @@ function ClassDetailsPage() {
                                     return <Box sx={{ display: 'flex', flexDirection: 'row', mt: 2 }}>
                                         <Grid container justifyContent="center" alignItems="center" direction="row" spacing={7}>
                                             <Grid item>
-                                                <Button variant="outlined" onClick={handleCancel} color="error">
+                                                <Button variant="outlined" onClick={handleCancel} color="error" sx={{bgcolor: '#F5F5F5'}}>
                                                     Cancel &nbsp;
                                                     <CancelIcon />
                                                 </Button>
@@ -381,9 +377,10 @@ function ClassDetailsPage() {
                     }
 
                 </form>
-                <Button onClick={handleReturnClick} sx={{ border: 2, borderColor: '#80bd02', bgcolor: '#FFFFFF', color: "#000000", mt: 3 }}>
+                <BackButton />
+                {/* <Button onClick={handleReturnClick} sx={{ border: 2, borderColor: '#80bd02', bgcolor: '#FFFFFF', color: "#000000", mt: 3 }}>
                     <ArrowBackIosNewIcon /> &nbsp;
-                </Button>
+                </Button> */}
             </Container>
         </>
     )
