@@ -1,0 +1,50 @@
+.Login-form {
+    background-color: orange;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center ;
+}
+
+.login {
+    /* background-color: rgba(0,0,0, 0.6); */
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: 100px 10px 10px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}
+
+.login img{
+    width: 100%;
+}
+
+.hiddenDivs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 400px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.btn-div{
+    width: 100px;
+}
+.bottom-btn-div{
+    height: 40px;
+    width: 150px;
+    display: block;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    row-gap: 5px;
+    padding-top: 10%;
+}
