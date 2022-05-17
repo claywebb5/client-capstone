@@ -93,7 +93,6 @@ function UserPage() {
     });
     setIsEditing(false);
   };
-
   //  ============< GO BACK >=============
   const handleReturnClick = () => {
     history.goBack();
@@ -113,22 +112,21 @@ function UserPage() {
     initials = firstLetter + secondLetter;
     return true;
   };
-  
   // =============< OPEN EDIT >===============
   const handleEdit = () => {
     setIsEditing(true);
   };
-
   // =============< CANCEL EDIT >===============
   const handleCancel = () => {
     setEditUser(userObj);
     setIsEditing(false);
   };
 
+  // ==========================< RETURN >============================
   return (
     <>
 {/* ---------  The height and fixed position of this page may need to be adjusted at some point ---------- */}
-      <Container sx={{ border: 4, borderColor: '#c3c4c5', bgcolor: '#FFFFFF', mt: 1, height:window.innerHeight, overflow:'scroll', }}>
+      <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, height:window.innerHeight, overflow:'scroll', }}>
         <form onSubmit={handleSubmit}>
 
           {/* ============< HEADER >============== */}
@@ -280,7 +278,7 @@ function UserPage() {
           }
 
           {/* ============< EMERGENCY CONTACT >============== */}
-          <Card sx={{ border: 1, borderColor: "#000000", mt: 3 }}>
+          <Card sx={{ border: 1, borderColor: "#000000", bgcolor: 'transparent', mt: 3 }}>
             <CardContent>
               <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                 <Grid container justifyContent="center" alignItems="center" direction="column" spacing={1}>
