@@ -90,4 +90,4 @@ We're especially thankful to our client, Fit Truk, for giving us such an awesome
 
 
 ## Support
-This is an updated version, the original application created by my team can be viewed [here.] (https://github.com/claywebb5/fitTruk-project)
+This is an updated version, the original application created by my team can be viewed [here.](https://github.com/claywebb5/fitTruk-project)
