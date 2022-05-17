@@ -1,0 +1,72 @@
+const express = require('express');
+const pool = require('../modules/pool');
+const router = express.Router();
+
+
+// -------------------------- update class details (PUT)
+
+router.put('/edit-class/:id', (req, res) => {
+
+
+    console.log('req.body', req.body.location, req.body.description) // data would be location and description
+    console.log('params', req.params.id) // params is class id
+
+    if (req.isAuthenticated()) {
+
+    const queryText =
+        `UPDATE "classes"
+    SET "location" = $1, "description" = $2
+    WHERE classes.id = $3`;
+
+    pool.query(queryText, [req.body.location, req.body.description, req.params.id])
+
+        .then((result) => {
+            res.send(result.rows)
+        })
+        .catch((error) => {
+            console.log(error);
+            res.sendStatus(500);
+        })
+
+    } else {
+        res.sendStatus(403);
+    }
+
+});
+
+
+// -------------------------- check in customers for classes (PUT)
+
+router.put('/check-in/:id', (req, res) => {
+
+    console.log('req.body.data', req.body.data) // data would be the user_id
+    console.log('params', req.params.id) // params is class id
+
+    if (req.isAuthenticated()) {
+
+        const queryText =
+            `UPDATE "class_list"
+    SET "checked_in" = TRUE
+    WHERE user_id = $1 and "class_id" = $2`;
+
+        pool.query(queryText, [req.body.data, req.params.id])
+
+            .then((result) => {
+                res.send(result.rows)
+            })
+            .catch((error) => {
+                console.log(error);
+                res.sendStatus(500);
+            })
+
+    } else {
+        res.sendStatus(403);
+    }
+
+});
+
+
+
+
+
+module.exports = router;
