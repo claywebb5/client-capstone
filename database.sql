@@ -1,5 +1,6 @@
 -- *** CREATE DATABASE NAME: fittruk
 
+
 -- Here's the database setup, some things that may need to be changed for real world application are the
 -- VARCHAR() limits, as no password needs to be 1000 characters, and other data types don't need to be as
 -- large as they are currently set up to be.
