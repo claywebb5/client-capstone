@@ -6,7 +6,7 @@
 -- large as they are currently set up to be.
 
 CREATE TABLE "user" (
-	"id" SERIAL PRIMARY KEY NOT NULL,
+	"id" SERIAL PRIMARY KEY NOT NULL, 
 	"username" VARCHAR (80) UNIQUE NOT NULL,
   "password" VARCHAR (1000),
 	"first_name" VARCHAR(100),
