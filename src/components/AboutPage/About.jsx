@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // ---------< MUI IMPORTS >----------------
 import Container from '@mui/material/Container';
@@ -22,6 +22,9 @@ import Box from '@mui/material/Box';
 function AboutTab() {
 
     const user = useSelector(store => store.user)
+
+    // ======< SELECTED ACCORDION TEXT COLOR >==================
+    // const [textColor, setTextColor] = useState('#F0FFFF')
 
     // ======< IMAGE DATA >==================
     const itemData = [
@@ -63,7 +66,7 @@ function AboutTab() {
         <>
             <Container>
                 {/*========< START HEADING CARD >================*/}
-                <Card>
+                <Card sx={{ bgcolor: '#41414c', color: '#FFFFFF'}}>
                     <CardContent>
                         <Typography variant="h3" align="center">
                             ABOUT THE TRUK
@@ -77,19 +80,19 @@ function AboutTab() {
                 </Card>
 
                 {/*========< START HERE'S WHAT IS ON THE TRUK CARD >================*/}
-                <Card>
+                <Card sx={{ bgcolor: '#41414c', color: '#FFFFFF'}}>
                     <Typography variant="h6" align="center">
                         HERE'S WHAT IS ON THE TRUK:
                     </Typography>
 
                     {/* ========< HIGHLIGHTS ACCORDION >============= */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>HIGHLIGHTS</Typography>
+                            <Typography sx={{color: '#80bd02'}}>HIGHLIGHTS</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -120,13 +123,13 @@ function AboutTab() {
                     </Accordion>
 
                     {/* ========< EQUIPMENT ACCORDION >============= */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>EQUIPMENT</Typography>
+                            <Typography sx={{color: '#80bd02'}}>EQUIPMENT</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -202,13 +205,13 @@ function AboutTab() {
                     </Accordion>
 
                     {/* ===========< AUDIO/VIDEO ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>AUDIO/VIDEO</Typography>
+                            <Typography sx={{color: '#80bd02'}}>AUDIO/VIDEO</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -232,13 +235,13 @@ function AboutTab() {
                         </AccordionDetails>
                     </Accordion>
                     {/* ===========< LIGHTING ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>LIGHTING</Typography>
+                            <Typography sx={{color: '#80bd02'}}>LIGHTING</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -259,13 +262,13 @@ function AboutTab() {
                         </AccordionDetails>
                     </Accordion>
                     {/* ===========< SECURITY ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>SECURITY</Typography>
+                            <Typography sx={{color: '#80bd02'}}>SECURITY</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -286,13 +289,13 @@ function AboutTab() {
                         </AccordionDetails>
                     </Accordion>
                     {/* ===========< INTERIOR AMENITIES ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>INTERIOR AMENITIES</Typography>
+                            <Typography sx={{color: '#80bd02'}}>INTERIOR AMENITIES</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -325,13 +328,13 @@ function AboutTab() {
                         </AccordionDetails>
                     </Accordion>
                     {/* ===========< POWER ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>POWER</Typography>
+                            <Typography sx={{color: '#80bd02'}}>POWER</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>
@@ -349,13 +352,13 @@ function AboutTab() {
                         </AccordionDetails>
                     </Accordion>
                     {/* ===========< PICTURES ACCORDION >=============== */}
-                    <Accordion>
+                    <Accordion sx={{ bgcolor: '#6d6e71', color: '#F0FFFF', fontWeight: 'bold' }}>
                         {/* ------< SUMMARY >-------- */}
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header">
-                            <Typography>PICTURES</Typography>
+                            <Typography sx={{color: '#80bd02'}}>PICTURES</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
                         <AccordionDetails>

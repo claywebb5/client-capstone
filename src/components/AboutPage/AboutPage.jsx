@@ -22,8 +22,8 @@ function AboutPage() {
   };
   return (
     <>
-      <Container>
-        <Box sx={{ bgcolor: "#fff", width: '100%', typography: 'body1' }}>
+      <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, pb: 2, pt: 1 }}>
+        <Box sx={{ width: '100%', typography: 'body1' }}>
           <TabContext value={value}>
             {/* TABS TITLE  */}
             <Box sx={{ bgcolor: "#6d6e71", borderBottom: 1, borderColor: 'divider' }}>
