@@ -22,7 +22,8 @@ function AboutPage() {
   };
   return (
     <>
-      <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, pb: 2, pt: 1 }}>
+      {/* <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, pb: 2, pt: 1 }}> */}
+      <Container sx={{ border: 4, borderColor: '#c3c4c5', mt: 1, pt: 1, height:window.innerHeight, overflow:'scroll', }}>
         <Box sx={{ width: '100%', typography: 'body1' }}>
           <TabContext value={value}>
             {/* TABS TITLE  */}
