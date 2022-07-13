@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // ---------< MUI IMPORTS >----------------
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@mui/material/Container';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -17,14 +18,30 @@ import List from '@mui/material/List';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
-
+const useStyles = makeStyles((theme) => ({
+    root: {
+      width: '100%',
+    },
+    icon: {
+      verticalAlign: 'bottom',
+      height: 20,
+      width: 20,
+    },
+    details: {
+      alignItems: 'center',
+    },
+    column: {
+      flexBasis: '33.33%',
+    },
+  }));
+  
 
 function AboutTab() {
 
     const user = useSelector(store => store.user)
 
-    // ======< SELECTED ACCORDION TEXT COLOR >==================
-    // const [textColor, setTextColor] = useState('#F0FFFF')
+    const classes = useStyles();
+
 
     // ======< IMAGE DATA >==================
     const itemData = [
@@ -132,7 +149,7 @@ function AboutTab() {
                             <Typography sx={{color: '#80bd02'}}>EQUIPMENT</Typography>
                         </AccordionSummary>
                         {/* ------< DETAILS >-------- */}
-                        <AccordionDetails>
+                        <AccordionDetails className={classes.details}>
                             <Box
                                 sx={{
                                     display: 'grid',
@@ -140,18 +157,18 @@ function AboutTab() {
                                     gap: 1,
                                 }}
                             >
-                                <Grid sx={{ gridColumn: '1' }}>
+                                <Grid sx={{ gridColumn: '1', }}>
                                     <ListItem disablePadding>
                                         <ListItemText primary="Squat Rack" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Commercial Cable Station" />
+                                        <ListItemText primary="Cable Station" />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemText primary="Pull-Up Bars" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Adjustable Plyo Boxes" />
+                                        <ListItemText primary="Plyo Boxes" />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemText primary="Dip Bars" />
@@ -168,16 +185,19 @@ function AboutTab() {
                                         <ListItemText primary="Trx Trainer" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Torque Tank M1 Sled" />
+                                        <ListItemText primary="Tank Sled" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemText primary="Dumbbell Set" />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemText primary="2 Rogue Benches" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="3 Solid Fitness Barbells" />
+                                        <ListItemText primary="3 Barbells" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="2 Solid Fitness Training Bars" />
+                                        <ListItemText primary="2 Training Bars" />
                                     </ListItem>
                                 </Grid>
                                 <Grid sx={{ gridColumn: '3 / 3' }}>
@@ -188,7 +208,7 @@ function AboutTab() {
                                         <ListItemText primary="Bumper Plates" />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Full Kettle Bell and Dumbbell Set" />
+                                        <ListItemText primary="Kettle Bell Set" />
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemText primary="Resistance Bands" />
