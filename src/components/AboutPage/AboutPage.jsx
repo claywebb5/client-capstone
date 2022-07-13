@@ -9,7 +9,6 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TabContext from '@material-ui/lab/TabContext';
-import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import Container from '@mui/material/Container';
 
@@ -28,19 +27,16 @@ function AboutPage() {
           <TabContext value={value}>
             {/* TABS TITLE  */}
             <Box sx={{ bgcolor: "#6d6e71", color: '#F0FFFF', borderBottom: 1, borderColor: 'divider' }}>
-              {/* <TabList> */}
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  textColor="secondary"
-                  indicatorColor="secondary"
-                  aria-label="secondary tabs example"
-                  centered
-                >
-                  <Tab label="About" value="1" />
-                  <Tab label="Classes & Packages" value="2" />
-                </Tabs>
-              {/* </TabList> */}
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                textColor="secondary"
+                indicatorColor="secondary"
+                centered
+              >
+                <Tab label="About" value="1" />
+                <Tab label="Classes & Packages" value="2" />
+              </Tabs>
             </Box>
             {/* TABS CONTENT (ABOUT) */}
             <TabPanel value="1">
