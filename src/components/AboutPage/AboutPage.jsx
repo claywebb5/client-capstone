@@ -7,6 +7,7 @@ import BackButton from '../BackButton/BackButton';
 // ---------< MUI IMPORTS >----------------
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 import TabContext from '@material-ui/lab/TabContext';
 import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
@@ -26,12 +27,20 @@ function AboutPage() {
         <Box sx={{ width: '100%', typography: 'body1' }}>
           <TabContext value={value}>
             {/* TABS TITLE  */}
-            <Box sx={{ bgcolor: "#6d6e71", borderBottom: 1, borderColor: 'divider' }}>
-              {/* <TabList onChange={handleChange} centered indicatorColor='#ace23a'> */}
-              <TabList onChange={handleChange} centered indicatorColor='primary'>
-                <Tab label="About" value="1" />
-                <Tab label="Classes & Packages" value="2" />
-              </TabList>
+            <Box sx={{ bgcolor: "#6d6e71", color: '#F0FFFF', borderBottom: 1, borderColor: 'divider' }}>
+              {/* <TabList> */}
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  textColor="secondary"
+                  indicatorColor="secondary"
+                  aria-label="secondary tabs example"
+                  centered
+                >
+                  <Tab label="About" value="1" />
+                  <Tab label="Classes & Packages" value="2" />
+                </Tabs>
+              {/* </TabList> */}
             </Box>
             {/* TABS CONTENT (ABOUT) */}
             <TabPanel value="1">
